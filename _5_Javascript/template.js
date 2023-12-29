@@ -324,3 +324,36 @@
 // conditional3();
 
 // ///////////////////////////////////////////////////////////////
+// // Loop
+// let forLoop = () => {
+//     for (let i = 1; i <=5; i++) {
+//         window.document.writeln("i: "+i+"<br/>");
+//     }
+//     // for(;;){}
+// }
+// forLoop();
+// window.document.writeln("*************** <br/>");
+
+// let whileLoop = () => {
+//     let i = 1;
+//     while ( i <=5) {
+//         window.document.writeln("i: "+i+"<br/>");
+//         i=i+1;
+//     }
+//     // while(true){}
+// }
+// whileLoop();
+
+// window.document.writeln("*************** <br/>");
+// let doWhileLoop = () => {
+//     let i = 1;
+//     do{
+//        window.document.writeln("i: "+i+"<br/>");
+//         i=i+1;
+//     }
+//     while ( i <=5) ;
+//     //while(true){}
+// }
+// doWhileLoop();
+
+///////////////////////////////////////////////////////////////
