@@ -184,3 +184,76 @@
 
 // console.log(vocabulary.startsWith("js"));
 // console.log(vocabulary.endsWith("js"));
+
+// ÖDEV // kullanıcı tarafından girilen bir kelimenin (prompt)
+// let userData= prompt("Lütfen bir şeyler yazınız")  ;
+// S-1) Kaç karakterlidir ? (length)
+// S-2) boşluklar alınarak Kaç karakterlidir ? (trim)
+// S-3) bütün kelimeyi küçük harfle göstermek ? (toLowerCase())
+// S-4) bütün kelimeyi büyük harfle göstermek ? (toUpperCase())
+// S-5) Kullanıcıdan alınan ilk kelimeyle , "javascript" kelimeyle değiştirin. (replace, substring, indexOf)
+// console.log(userData.replace("xxxxxxx"),"javascript");
+// console.log(userData.replace(userData.substring(0,userData.indexOf(" ")),"javascript"));
+// S-6) yazdığınız kelimede "javascript ile mi başlıyor" ? (startsWith())
+// S-7) yazdığınız kelimede "javascript ile mi bitiyor" ? (endsWith())
+// S-8) ilk harf nedir  ? (charAt())
+// S-9) girdiğiniz kelimenin sonuna "-ben js öğreniyorum" (concat())
+// S-10) girdiğiniz 0 ile 4 arasındaki indexi ekranda gösterin? (subString())
+
+///////////////////////////////////////////////////////////////
+// Function
+// // 1 parametresizReturnsuz
+// function parametresizReturnsuz(){
+//     console.log("parametresiz Retursuz");
+// }
+// parametresizReturnsuz();
+
+// // 2 parametreliReturnsuz
+// function parametreliReturnsuz(number){
+//     console.log("parametreli Returnsuz "+(Math.sqrt(number)));
+// }
+// parametreliReturnsuz(25);
+
+// // 3 parametresizReturnlu
+// function parametresizReturnlu(){
+//     return Math.pow(2,5);
+// }
+// let data3=parametresizReturnlu();
+// console.log(data3);
+
+// // 4 parametreliReturnlu
+// function parametreliReturnlu(alt,ust){
+//     return Math.pow(alt,ust);
+// }
+// let data4=parametreliReturnlu(2,5);
+// console.log(data4);
+
+///////////////////////////////////////////////////////////////
+// Immediate Function
+// (function () {
+//     console.log("Immediate Function Anonymous")
+// })();
+
+// (() => {
+//     console.log("Immediate Function Arrow")
+// })();
+
+// // Function
+// function normFuction() {
+//     console.log("normFuction");
+// }
+// normFuction()
+
+// // Anonymous Function
+// let anonymousfunction = function () {
+//     console.log("anonymous function");
+// }
+// anonymousfunction()
+
+// // Arrow Function
+// let arrowfunction = (data) => {
+//     console.log("arrow function " + data);
+// }
+// arrowfunction("asd")
+
+// ///////////////////////////////////////////////////////////////
