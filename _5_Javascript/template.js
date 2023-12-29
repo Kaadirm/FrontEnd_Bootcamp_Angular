@@ -257,3 +257,70 @@
 // arrowfunction("asd")
 
 // ///////////////////////////////////////////////////////////////
+// // Conditional
+// let conditional = (data) => {
+//     let number = 5;
+//     if (number > 0) {
+//         console.log("pozitiftir");
+//     } else
+//         console.log("negatif");
+// }
+// conditional();
+
+// let ternary = (data) => {
+//     let number = 5;
+//     const result = (number > 0) ? "pozitiftir" : "negatif";
+//     console.log(result);
+// }
+// ternary()
+
+// // Conditional
+// let conditional2 = (data) => {
+//     let number = parseInt(Number("4"));
+//     if (number == 0) {
+//         console.log("0");
+//     } else if (number == 1) {
+//         console.log("1");
+//     } else if (number == 2) {
+//         console.log("2");
+//     } else if (number == 3) {
+//         console.log("3");
+//     } else if (number === 4) {
+//         console.log("4");
+//     } else if (number == 5) {
+//         console.log("5");
+//     } else {
+//         console.log("1<=X<=5 dışında");
+//     }
+// }
+// conditional2();
+
+// let conditional3 = (data) => {
+//     let number = parseInt(Number("4"));
+//     switch (number) {
+//         case 0:
+//             console.log("0");
+//             break;
+//         case 1:
+//             console.log("1");
+//             break;
+//         case 3:
+//             console.log("3");
+//             break;
+//         case 2:
+//             console.log("2");
+//             break;
+//         case 4:
+//             console.log("4");
+//             break;
+//         case 5:
+//             console.log("5");
+//             break;
+//         default:
+//             console.log("1<=X<=5 dışında");
+//             break;
+//     }
+// }
+// conditional3();
+
+// ///////////////////////////////////////////////////////////////
