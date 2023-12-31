@@ -357,3 +357,68 @@
 // doWhileLoop();
 
 ///////////////////////////////////////////////////////////////
+// Exception Handling
+const exception = () => {
+  try {
+    alertx("Alert");
+  } catch (err) {
+    console.error(err);
+    // throw
+    // throw new Error("zorunlu istisna yaptım");
+  } finally {
+    console.log("Ekranda göster Mutlaka");
+  }
+  console.log("son satır");
+};
+//exception();
+
+///////////////////////////////////////////////////////////////
+// debug
+// debugger
+let debug = () => {
+  //debugger
+  for (let i = 1; i <= 5; i++) {
+    //window.document.writeln("i: "+i+"<br/>");
+    console.log("i: " + i + "<br/>");
+  }
+  //debugger
+};
+// debug();
+
+///////////////////////////////////////////////////////////////
+// setTimeout(): sadece 1 kere çalışır ve sonra durur.
+let setTimeoutFunction = () => {
+  setTimeout(() => {
+    console.log("setTimeoutFunction 5 saneiye sonra çalıştı");
+  }, 5000);
+};
+//setTimeoutFunction();
+
+// setInterval():  ssürekli çalışır
+let setIntervalFunction = () => {
+  setInterval(() => {
+    console.log("setInterval 2 saneiye sonra çalışsın ve devam etsin");
+  }, 1000);
+};
+//setIntervalFunction();
+
+// setTimeout ve setInterval function beraber kullanmak
+let setTimeoutAndIntervalFunction = () => {
+  //Function
+  const clockData = () => {
+    console.log("1.saniye");
+  };
+
+  // setInterval function: Sürekli çalışsın
+  let intervalID = setInterval(clockData, 1000);
+
+  // 1 dakika sonra dursun.
+  // setTimeout(): sadece 1 kere çalışır ve sonra durur.
+  // 60*60*24*365
+  const time = parseInt(60);
+  setTimeout(() => {
+    clearInterval(intervalID);
+    console.log(time + " zaman sonra durdu.");
+  }, 1 * 1000 * time);
+};
+//setTimeoutAndIntervalFunction();
