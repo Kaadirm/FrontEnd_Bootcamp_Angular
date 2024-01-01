@@ -422,3 +422,45 @@ let setTimeoutAndIntervalFunction = () => {
   }, 1 * 1000 * time);
 };
 //setTimeoutAndIntervalFunction();
+
+///////////////////////////////////////////////////////////////
+// Senkron(single thread: process) - Asenkron nedir((multiple thread: process)) ?
+// Javascript tabiatı gereği Senkron mu ? Asenkron mu ?
+///////////////////////////////////////////////////////////////
+// call back function
+const callBackFunction = () => {
+  // 1.Function
+  let birinci = (data) => {
+    return Math.sqrt(data);
+  };
+
+  // 2.Function
+  let ikinci = (xyz) => {
+    //let userData=  parseInt(prompt("Lütfen bir sayı giriniz"));
+    let userData = 25;
+    const result = xyz(userData);
+    console.log(result);
+  };
+  ikinci(birinci);
+};
+//callBackFunction()
+
+// promise
+const promiseFunction = () => {
+  const isLogin = true;
+  const isCreated = 201;
+  let pro = new Promise((resolve, reject) => {
+    if (isLogin && isCreated == 201) resolve("olumlu sonuç");
+    else reject("olumsuz sonuç");
+  })
+    .then(() => {
+      // new Promise eğer sonuç geldiyse then çalışsın
+      console.log("Then");
+    })
+    .catch(() => {
+      // new Promise eğer sonuç olumsuzsa catch çalışsın
+      console.error("catch");
+    });
+  console.log(pro);
+};
+promiseFunction();
