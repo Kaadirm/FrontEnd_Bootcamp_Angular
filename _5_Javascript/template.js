@@ -463,4 +463,120 @@ const promiseFunction = () => {
     });
   console.log(pro);
 };
-promiseFunction();
+// promiseFunction();
+
+///////////////////////////////////////////////////////////////
+// Diziler
+let arrayFunction = () => {
+  let array = [4, 1, 5, 2, 9, 7, 3, 6];
+  console.log(array);
+  console.log("Eleman sayısı: " + array.length);
+  console.log(array[0]);
+  console.log(array[7]);
+  console.log(array[7 - 1]);
+  array[8] = 44;
+  console.log(array);
+  console.log(array[array.length - 1]);
+};
+//arrayFunction();
+
+let arrayFunction2 = () => {
+  let array = [4, 1, 5, 2, 9, 7, 3, 6];
+  // Ödev: 1-9 arasında  rastgele 8 tane sayı  üreten algoritma
+  return array;
+};
+
+let arrayFunction3 = () => {
+  let array = arrayFunction2();
+  //let cloneArray=array;
+  //console.log(cloneArray);
+
+  // For
+  for (let i = 0; i < array.length; i++) {
+    //console.log(array[i]);
+    document.writeln(array[i]);
+  }
+
+  // FOR ...IN
+  document.writeln("<br/>*******************************<br/>");
+  array.push(23);
+  for (let data in array) {
+    //document.writeln(data);
+    document.writeln(data + "=> " + array[data] + "<br/>");
+  }
+
+  // FOR ... OF
+  document.writeln("<br/>*******************************<br/>");
+  array.unshift(50);
+  //array.unshift(50,99);
+  for (let data of array) {
+    document.writeln(data);
+  }
+
+  // FOREACH
+  document.writeln("<br/>*******************************<br/>");
+  //  forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;
+  array.pop();
+  array.forEach((value, index, array) => {
+    //document.writeln(value + "=> " + index + "=> " + array + "<br/>");
+    document.writeln(`${value} `);
+  });
+
+  //// FOREACH
+  document.writeln("<br/>*******************************<br/>");
+  //  forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;
+  array.shift();
+  array.forEach((value, index, array) => {
+    //document.writeln(value + "=> " + index + "=> " + array + "<br/>");
+    document.writeln(`${value} `);
+  });
+
+  //// SORT
+  // document.writeln("<br/>*******************************<br/>");
+  // array.sort().forEach(value => {
+  //     document.writeln(`${value} `);
+  // });
+
+  //// REVERSE
+  // document.writeln("<br/>*******************************<br/>");
+  // array.reverse().forEach(value => {
+  //     document.writeln(`${value} `);
+  // });
+
+  // document.writeln("<br/>*******************************<br/>");
+  // array.sort().reverse().forEach(value => {
+  //     document.writeln(`${value} `);
+  // });
+
+  // document.writeln("<br/>*******************************<br/>");
+  // delete array[0]
+  // array.forEach(value => {
+  //     console.log(`${value} `);
+  // });
+};
+//arrayFunction3();
+
+// Delete
+let arrayFunction4 = () => {
+  let array = arrayFunction2();
+  console.log(array);
+
+  // belirtilen indisteki elemanı siler yerine undedined ekler
+  delete array[0];
+  console.log(array);
+};
+//arrayFunction4();
+
+// String
+let arrayFunction5 = () => {
+  let array = arrayFunction2();
+  console.log(array);
+
+  // toString() => Diziyi String'e çevirmek için kullanıyoruz
+  let arrayToString = array.toString();
+  console.log(arrayToString);
+  console.log(arrayToString.substring(0, 4));
+
+  // Join
+};
+arrayFunction5();
