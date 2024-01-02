@@ -663,3 +663,24 @@ let arrayFunction8 = () => {
 };
 arrayFunction8();
 ///////////////////////////////////////////////////////////////
+// LocalStorage
+let localStorageData = () => {
+  // SET
+  localStorage.setItem("username", "Kadir");
+  localStorage.setItem("surname", "Mızrak");
+
+  // GET
+  let result = localStorage.getItem("username");
+  console.log(result);
+
+  // Hashing
+
+  // Remove Item
+  localStorage.removeItem("username");
+
+  // Clear
+  // localStorage.clear();
+};
+localStorageData();
+
+///////////////////////////////////////////////////////////////
