@@ -567,7 +567,7 @@ let arrayFunction4 = () => {
 };
 //arrayFunction4();
 
-// String
+// Diziyi String'e çevirmek
 let arrayFunction5 = () => {
   let array = arrayFunction2();
   console.log(array);
@@ -599,17 +599,67 @@ let arrayFunction6 = () => {
 };
 // arrayFunction6();
 
-// slice, splice
+// slice (Original Array'i bozmaz)
+// splice (Original Array'i bozar)
 // Diziyi String'e çevirmek
 let arrayFunction7 = () => {
   let array = arrayFunction2();
   console.log(array);
 
   // Splice
-  console.log(array);
-  let spliceArray = array.slice(0, 2);
-  console.log(spliceArray);
-};
-arrayFunction6();
+  // array.splice(0, 2);
+  // console.log(array);
 
+  // array.splice(2, 3);
+  // console.log(array);
+
+  // 0: başlama indisi
+  // 2: çıkarma
+  // array.splice(0, 3);
+  // console.log(array);
+
+  // 2: Başlama indisi
+  // 0: Ekleme
+  // 2,3: eklenecek sayılar
+  array.splice(2, 0, 2, 3);
+  console.log(array);
+};
+// arrayFunction7();
+
+// Filter, map
+let arrayFunction8 = () => {
+  let array = arrayFunction2();
+  array.sort();
+  // console.log(array);
+  // array
+  //   .filter((response) => {
+  //     return response > 5;
+  //   })
+  //   .forEach((value) => {
+  //     console.log(`${value}`);
+  //   });
+
+  // let mapResult = array.map((response) => {
+  //   return (response = response * 2);
+  // });
+  // console.log(mapResult);
+  // mapResult.forEach((value) => {
+  //   console.log(`${value}`);
+  // });
+
+  // Her bir değişkendeki sadece çift olan sayıları alın(filter)
+  // sonrasında bu sayılara 5 ekleyin (map)
+  // sonrasında bu sayıları ekranda göster (forEach)
+  array
+    .filter((response) => {
+      return response % 2 === 0;
+    })
+    .map((response) => {
+      return (response += 5);
+    })
+    .forEach((value) => {
+      console.log(`${value}`);
+    });
+};
+arrayFunction8();
 ///////////////////////////////////////////////////////////////
