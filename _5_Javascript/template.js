@@ -576,7 +576,40 @@ let arrayFunction5 = () => {
   let arrayToString = array.toString();
   console.log(arrayToString);
   console.log(arrayToString.substring(0, 4));
+  console.log("****************");
 
-  // Join
+  // Join() => Diziyi String'e çevirmek için kullanıyoruz
+  let arrayData = array.join(" ");
+  console.log(arrayData);
 };
-arrayFunction5();
+// arrayFunction5();
+
+// slice, splice
+// Diziyi String'e çevirmek
+let arrayFunction6 = () => {
+  let array = arrayFunction2();
+  console.log(array);
+
+  // Slice
+  let sliceArray = array.slice(2);
+  console.log(sliceArray);
+
+  let sliceArray2 = array.slice(0, 2);
+  console.log(sliceArray2);
+};
+// arrayFunction6();
+
+// slice, splice
+// Diziyi String'e çevirmek
+let arrayFunction7 = () => {
+  let array = arrayFunction2();
+  console.log(array);
+
+  // Splice
+  console.log(array);
+  let spliceArray = array.slice(0, 2);
+  console.log(spliceArray);
+};
+arrayFunction6();
+
+///////////////////////////////////////////////////////////////
