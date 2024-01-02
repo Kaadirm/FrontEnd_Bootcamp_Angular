@@ -676,11 +676,67 @@ let localStorageData = () => {
   // Hashing
 
   // Remove Item
-  localStorage.removeItem("username");
+  // localStorage.removeItem("username");
 
   // Clear
-  // localStorage.clear();
+  localStorage.clear();
 };
-localStorageData();
+// localStorageData();
 
 ///////////////////////////////////////////////////////////////
+// Object
+let objectData = () => {
+  let person = {
+    name: "Kadir",
+    surname: "Memisoglu",
+    isLogin: true,
+    isCreated: 2024,
+    array: [4, 1, 5, 2, 9, 7, 3, 6],
+    language: {
+      name: "Java SE",
+      age: 20,
+    },
+    result: function () {
+      console.log(this.surname + " Function çalıştı");
+      console.log(person.surname + "Function çalıştı");
+      // return surname + " " + this.isLogin;
+    },
+  };
+  console.log("*********************");
+  console.log(person);
+  console.log("*********************");
+  console.log(person.isLogin);
+  console.log(typeof person.isLogin);
+  console.log("*********************");
+  console.log(person.name);
+  console.log(person["name"]); //nested calling
+  console.log(person.language.name);
+  person.result();
+
+  //object Literal
+  person.number = 44;
+  console.log(person.number);
+
+  //diziyi => String'e (toString() veya join)
+  console.log(person.array);
+  console.log(typeof person.array);
+  console.log(typeof person.language);
+  let arrayToString = person.array.toString();
+  console.log(arrayToString);
+  let arrayToString2 = person.array.join(",");
+  console.log(arrayToString2);
+
+  // String'i => Diziye çevir (split())
+  let stringToArray = arrayToString.split(",");
+  console.log(stringToArray);
+
+  // JSON toString, parse
+  let objectToString = JSON.stringify(person);
+  console.log(objectToString);
+  console.log(objectToString.substring(0, 3));
+
+  const data = JSON.parse(objectToString);
+  console.log(data);
+};
+
+objectData();
