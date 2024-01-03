@@ -661,7 +661,7 @@ let arrayFunction8 = () => {
       console.log(`${value}`);
     });
 };
-arrayFunction8();
+// arrayFunction8();
 ///////////////////////////////////////////////////////////////
 // LocalStorage
 let localStorageData = () => {
@@ -737,6 +737,77 @@ let objectData = () => {
 
   const data = JSON.parse(objectToString);
   console.log(data);
+
+  // Object Constructor
+  // {[a,b,c,d] , [{},{}]}
+  // Object ProtoType
+  // Object hasOwnProperty
+  // Object Create
+
+  // built-in-constructor
+  String.prototype.usluSayi = function (data) {
+    return Math.pow(data, 2);
+  };
+  console.log("".usluSayi(5));
 };
 
-objectData();
+// objectData();
+
+// Object
+let objectData2 = () => {
+  let Student = function (adi, soyadi, numara) {
+    this.adi = adi;
+    this.soyadi = soyadi;
+    this.numara = numara;
+    console.log(this);
+  };
+
+  Student.prototype.getAdi = function () {
+    return this.adi;
+  };
+
+  let studentInstance = new Student("adi22", "soyadı22", 22);
+  //console.log(studentInstance);
+  console.log(studentInstance.soyadi);
+
+  // let studentInstance2= Object.create(Student);
+  // console.log(studentInstance2);
+
+  // built-in-constructor
+  String.prototype.usluSayi = function (data) {
+    return Math.pow(data, 2);
+  };
+  console.log("".usluSayi(5));
+};
+//objectData2();
+
+let domFunction1 = () => {
+  console.log("çalıştı");
+
+  // GET
+  const paragraf = document.getElementById("parag_id");
+  //const paragraf=document.getElementsByClassName("parag_class")[0];
+  //const paragraf=document.getElementsByName("parag_name")[0];
+  //const paragraf=document.getElementsByTagName("p")[1];
+
+  // Dom Html, Text
+  //paragraf.innerHTML="<b><mark>Değiştirdim</mark></b>";
+  paragraf.innerText = "Değiştirdim";
+
+  // Dom Css
+  paragraf.style.color = "red";
+  paragraf.style.backgroundColor = "black";
+  paragraf.style.padding = "2rem";
+};
+
+let domFunction2 = () => {
+  // GET
+  const paragraf = document.getElementById("parag_id");
+  paragraf.addEventListener("click", () => {
+    console.log("add Event Listener Çalıştı");
+    setTimeout(() => {
+      alert("add Event Listener Çalıştı");
+    }, 2000);
+  });
+};
+domFunction2();
