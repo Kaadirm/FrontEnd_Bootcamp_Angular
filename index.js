@@ -78,7 +78,7 @@ let dateNowFunction = () => {
 };
 //dateNowFunction()
 
-//4- ES5(2009) trim();
+//5- ES5(2009) trim();
 let trimFunction = () => {
   let data = str();
   console.log(data);
@@ -86,13 +86,46 @@ let trimFunction = () => {
   console.log(data.trim());
   console.log(data.trim().length);
 };
-trimFunction();
+//trimFunction()
 
-// JSON.stringfy()
-// JSON.parse()
+// 6-7- ES5(2009) JSON.stringfy() JSON.parse()
+let JsonFunction = () => {
+  let data = person();
+  let stringData = JSON.stringify(data);
+  console.log(stringData);
+  let stringParse = JSON.parse(stringData);
+  console.log(stringParse);
+};
+//JsonFunction()
 
-// ForEach()
-// Map()
+// 8-9-10- ES5(2009) ForEach() Map() Filter()
+// forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;
+// forEach: Void dönderir
+
+//map<U>(callbackfn: (value: T, index: number, array: T[]) => U, thisArg?: any): U[];
+// map    : Dizi Dönderir
+let mapFilterForeachFunction = () => {
+  let data = array();
+  console.log(data);
+  data.forEach((response) => {
+    console.log(response * 2);
+  });
+  console.log("*******");
+
+  let mapData = data.map((response) => {
+    return response * 2;
+  });
+  console.log(mapData);
+  console.log("*******");
+
+  let filterData = data.filter((response) => {
+    return response % 2 === 0;
+  });
+  console.log(filterData);
+  console.log("*******");
+};
+// mapFilterForeachFunction();
+
 // Filter
 // Reduce()
 // ReduceRight()
