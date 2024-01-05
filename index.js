@@ -4,23 +4,23 @@
 // ES5
 "use strict";
 
-// "use strict";
-// String Access
-// multiline
-// Date.now();
-// trim();
-// JSON.stringfy()
-// JSON.parse()
-// ForEach()
-// Map()
-// Filter
-// Reduce()
-// ReduceRight()
-// indexOf()
-// lastIndexOf()
-// every()
-// some()
-// getter and setter
+// "use strict"; => Katı mod
+// String Access  => charAt yerine kullanıyoruz
+// multiline  => readebility için
+// Date.now(); => şimdiki zamanı milisaniye cinsinden göstermek için
+// trim(); => başında veya sonunda boşluklardan arındırmak için
+// JSON.stringfy()  => Objeyi String'e çevirmek
+// JSON.parse() => String yapıyı JSON çevirmek için
+// ForEach() => void döndürür her bir elemana erişir.
+// Map() => Dizi döndürür her bir elemana erişir
+// Filter => dizide isteiğimiz sonuçları listelemek için
+// Reduce()  => dizide genel bir işlem yapsın tek bir sonuç için (Soldan sağa doğru)
+// ReduceRight() => dizide genel bir işlem yapsın tek bir sonuç için (sağdan sola doğru)
+// indexOf() => Dizidee solda arama yapsın bulduğunda index numarası döndersin yoksa -1
+// lastIndexOf() => Dizidee sağdan sola arama yapsın bulduğunda index numarası döndersin yoksa -1
+// every() => Dizide bizim belirlediğimiz şarta göre hepsi sağlıyor mu (:boolean)
+// some() => Dizide bizim belirlediğimiz sadece 1 tek şarta göre hepsi sağlıyor mu (:boolean)
+// getter and setter => OOP getter and setter için kullanıyoruz.
 
 // VOCABULARY
 let str = () => {
@@ -100,10 +100,9 @@ let JsonFunction = () => {
 
 // 8-9-10- ES5(2009) ForEach() Map() Filter()
 // forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;
-// forEach: Void dönderir
-
+// forEach: Void döndürür.
 //map<U>(callbackfn: (value: T, index: number, array: T[]) => U, thisArg?: any): U[];
-// map    : Dizi Dönderir
+// map    : Dizi döndürür.
 let mapFilterForeachFunction = () => {
   let data = array();
   console.log(data);
@@ -126,14 +125,103 @@ let mapFilterForeachFunction = () => {
 };
 // mapFilterForeachFunction();
 
-// Filter
-// Reduce()
-// ReduceRight()
-// indexOf()
-// lastIndexOf()
-// every()
-// some()
-// getter and setter
+// 11- ES5(2009) Reduce()
+const reduceFunction = () => {
+  let data = array();
+  //Normal Toplama
+  let sum = 0;
+  for (let i = 0; i < data.length; i++) {
+    sum = sum + data[i];
+  }
+  //console.log("Toplam: " + sum);
+
+  // Reduce 1 2 3 4 5 6 (Soldan toplayarak ilerleme yapıyor)
+  let sum2 = data.reduce((previousValue, currentValue) => {
+    return previousValue + currentValue;
+  }, 0);
+  console.log("Reduce Toplam: " + sum2);
+
+  //console.log(data);
+};
+// reduceFunction();
+
+// 12- ES5(2009)  ReduceRight()
+const reduceRightFunction = () => {
+  let data = array();
+  // Reduce 1 2 3 4 5 6
+  let sum2 = data.reduceRight((previousValue, currentValue) => {
+    return previousValue + currentValue;
+  }, 0);
+  console.log("Reduce Right Toplam: " + sum2);
+};
+// reduceRightFunction();
+
+// 13-14- ES5(2009)  indexOf() lastIndexOf()
+const indexOfLastIndexOfFunction = () => {
+  let data = array();
+  let indexData = data.indexOf(2);
+  console.log(indexData);
+
+  let lastIndexData = data.lastIndexOf(2);
+  console.log(lastIndexData);
+};
+// indexOfLastIndexOfFunction();
+
+// 15- ES5(2009) every()
+const everyFunction = () => {
+  const data = array();
+  // every<S extends T>(predicate: (value: T, index: number, array: T[]) => value is S, thisArg?: any): this is S[];
+  let everyData = data.every((item) => {
+    return item > 0;
+  });
+  let everyIndexData = everyData
+    ? "Hepsi Sıfırdan Büyüktür"
+    : "En az 1 tanesi Sıfırdan Küçüktür";
+  console.log(everyIndexData);
+};
+// everyFunction();
+
+// 16- ES5(2009) every() some()
+const someFunction = () => {
+  const data = array();
+  // every<S extends T>(predicate: (value: T, index: number, array: T[]) => value is S, thisArg?: any): this is S[];
+  let everyData = data.some((response) => {
+    return response > 0;
+  });
+  let everyIndexData = everyData
+    ? "En az 1 tanesi sıfırdan büyüktür"
+    : "Hepsi Sıfırdan Küçüktür";
+  console.log(everyIndexData);
+};
+// someFunction();
+
+// 17- ES5(2009) every() getter and setter
+const getterFunction = () => {
+  const value = {
+    _username: "User data 44",
+
+    // GET
+    get getterUsername() {
+      return this._username;
+    }, //end get
+  }; //end object
+  console.log(value.getterUsername);
+};
+//getterFunction()
+
+const setterFunction = () => {
+  const value = {
+    _username: "",
+
+    // SET
+    set setterUsername(param) {
+      this._username = param;
+    }, //end get
+  }; //end object
+  value.setterUsername = "Malatya";
+  console.log(value._username);
+};
+//setterFunction()
 
 ///////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////
