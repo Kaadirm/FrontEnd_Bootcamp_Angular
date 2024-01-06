@@ -227,6 +227,85 @@ const setterFunction = () => {
 ///////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////
 // ES6
+// let, const  => Data Types
+// arrow Function  => normal Function > Anonymous Function> Arrow Function
+// for of  => Dizide Döngü
+// The Operator (Spread Operator) => Dizi veya object verileri almak için
+// Function Rest Parameter  => istediğmiiz kadar argüman vermek için
+// Include => Search (: boolean) içinde böyle bir kelime var mı ?
+// startsWith() endsWith() => ile mi başlıyor , ile mi bitiyor
+// Default Parameters => Eğer kullanıcı veri girmezse default değer gelsin
+// Class ==> OOP kullanıdğımız Class'ı anlamak için
+// Map, Set (Data Structures) => Javada Collection karşılıktır.
+// Promise
+
+// 1- ES6 (2015) let, const
+const letConstVarFunction = () => {
+  // Global Scope
+  var varData = 44;
+  console.log(varData);
+
+  var varData = 23;
+  console.log(varData);
+
+  // Local Scope
+  let letData = 11;
+  console.log(letData);
+  letData = 22;
+  console.log(letData);
+
+  const constData = 33;
+  console.log(constData);
+  // constData = 44;
+  // console.log(constData);
+};
+//letConstVarFunction();
+
+// 2- ES6 (2015) arrow Function
+// 3- ES6 (2015) for of
+let arrowForOf = () => {
+  for (let temp of array()) {
+    console.log(temp);
+  }
+};
+//arrowForOf()
+
+// 4- ES6 (2015) The Operator (Spread Operator)
+let spreadOpetorFunction = () => {
+  let data = array();
+  console.log(data);
+
+  let data2 = [7, 8, 9];
+  console.log(data2);
+  console.log("**********");
+  let data3 = [...data, ...data2, 44, 23];
+  console.log(data3);
+};
+//spreadOpetorFunction()
+
+// 5- ES6 (2015) Function Rest Parameter
+const restParameterFunction = () => {
+  function showing(...data) {
+    for (let temp of data) {
+      console.log(temp);
+    }
+  }
+  //showing(1,2,3,4,5);
+  //showing(array());
+  showing(...array());
+};
+//restParameterFunction();
+
+// 6- ES6 (2015)includes()
+const includeFunction = () => {
+  const text = str();
+  console.log(text);
+  //console.log(text.includes("ecmascript"));
+  let search = "ecmascript";
+  let result = text.includes(search) ? `${search} bulundu` : `${search} yoktur`;
+  console.log(result);
+};
+//includeFunction();
 
 ///////////////////////////////////////////////////////////////
 // Callback Function (ES6)
