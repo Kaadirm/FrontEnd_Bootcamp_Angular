@@ -307,13 +307,58 @@ const includeFunction = () => {
 };
 //includeFunction();
 
+//7- ES6 (2015) startsWith() endsWith()
+const startsEndsFunction = () => {
+  const text = str();
+  console.log(text);
+  console.log(text.startsWith("ecmascript"));
+  console.log(text.endsWith(" "));
+};
+//startsEndsFunction();
+
+// 8- ES6 (2015) Default Parameters
+const defaultParameterFunction = () => {
+  function hello(data = "Neden merhaba demedin") {
+    console.log("Merhabalar: " + data);
+  }
+  hello();
+};
+//defaultParameterFunction();
+
+// 9- ES6 (2015) Class
+const classFunction = () => {
+  // CLASS
+  class Computer {
+    // Constructor (Parametreli)
+    constructor(computerName, mainCard) {
+      this.computerName = computerName;
+      this.mainCard = mainCard;
+    }
+
+    // Method
+    computerProperties() {
+      console.log("Name: " + this.computerName + " Card: " + this.mainCard);
+    }
+  } // end Class
+
+  // Instance
+  let data1 = new Computer("Msi", "main card");
+  data1.computerProperties();
+
+  let data2 = new Computer("Asus", "main card");
+  data2.computerProperties();
+};
+classFunction();
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
+// Typescript
+
 ///////////////////////////////////////////////////////////////
 // Callback Function (ES6)
 // Promise(ES7)
 // asyc-await(ES8)
-
-///////////////////////////////////////////////////////////////
-// Typescript
 
 ///////////////////////////////////////////////////////////////
 // Zamanımız oldukca one page projesine başla
