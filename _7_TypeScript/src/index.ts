@@ -201,6 +201,114 @@ console.log(result5);
 
 // #### ENUM #################################################
 // TypeScript Enum
+let tsEnum = () => {
+    console.log("Enum");
+    // ENUM
+    enum computerTrade {
+        msi = "MSI",
+        dell = "DELL",
+        hp = "HP"
+    }
+
+    console.log(computerTrade.msi);
+    let computerOtherTrade: computerTrade = computerTrade.dell;
+    console.log(computerOtherTrade);
+};
+//tsEnum();
+
+// #### CLASS #################################################
+// TypeScript Sınıflar
+// OOP
+// this
+let tsClass = () => {
+    console.log("Class Examples");
+    /* CLASS
+    FIELD
+    CONSTRUCTOR
+    FUNCTION
+     */
+
+    class Computer {
+        // DATA TYPES
+        _computerName: string;
+        _ram: number;
+        _newVersion: boolean;
+
+        // CONSTRUCTOR
+        constructor(computerName: string, ram: number, newVersion: boolean) {
+            this._computerName = computerName;
+            this._ram = ram;
+            this._newVersion = newVersion;
+        }
+
+        // FUNCTION
+        computerInformation(): void {
+            let result = `Information => Computer Name: ${this._computerName} Computer Ram: ${this._ram} Computer version: ${this._newVersion}`;
+            console.log(result);
+        } //end function
+    } //end Computer
+
+    // INSTANCE
+    let computerIntance = new Computer("Msi", 8, true);
+    console.log("NAME: " + computerIntance._computerName);
+    console.log("RAM: " + computerIntance._ram);
+    console.log("VERSION: " + computerIntance._newVersion);
+} //end common Function
+tsClass()
+
+// #### OPTIONAL #################################################
+// TypeScript Sınıflar
+let tsOptionalClass = () => {
+    console.log("TypeScript Optional Class");
+    class Computer {
+        // DATA TYPES
+        _computerName: string;
+        _ram: number;
+        _newVersion: boolean;
+        // eğer Veri eklensin mi eklenmesin mi ? diye soruyorsak burada optiona(?)
+        _copilot?: boolean;
+
+        // CONSTRUCTOR
+        constructor(computerName: string, ram: number, newVersion: boolean, copilot?: boolean) {
+            this._computerName = computerName;
+            this._ram = ram;
+            this._newVersion = newVersion;
+            // Optional(?)
+            this._copilot = copilot;
+        }
+
+        // FUNCTION
+        computerInformation(): void {
+            let result = `Information => Computer Name: ${this._computerName} Computer Ram: ${this._ram} Computer version: ${this._newVersion}`;
+            console.log(result);
+        } //end function
+
+        // Optional(?:)
+        everyComputerCopilot() {
+            if (this._copilot !== undefined) {
+                console.error("YES AI computer available");
+                const other = `Computer Name: ${this._computerName} Computer Ram: ${this._ram} Computer version: ${this._newVersion}`;
+                const data = other + `Copilot: ${this._copilot}`;
+                console.log(data);
+            } else {
+                console.error("No AI computer available");
+                const other = `Computer Name: ${this._computerName} Computer Ram: ${this._ram} Computer version: ${this._newVersion}`;
+                console.log(other);
+            }
+        }
+    } //end Computer
+
+    // INSTANCE
+    // copilot: argüman eklenebilinirde eklenmeyebilirde
+    let computerIntance1 = new Computer("Msi", 8, true);
+    computerIntance1.everyComputerCopilot();
+
+    let computerIntance2 = new Computer("Msi", 8, true,true);
+    computerIntance2.everyComputerCopilot();
+}
+
+// #### ENUM #################################################
+// TypeScript Enum
 
 
 // #### CLASS #################################################
