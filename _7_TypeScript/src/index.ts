@@ -1,3 +1,10 @@
+// https://www.typescriptlang.org/
+
+// npm run typescript 
+// npm run nodemon
+// tsc 
+// tsc -w
+
 /*
 Javascript Nedir ?
 
@@ -151,33 +158,63 @@ let tsArray = () => {
 }
 //tsArray()
 
+// number,string,boolean,any
+// #### OBJECT  #################################################
+let tsObject = () => {
+    // TypeScript Object
+    console.log("TypeScript Object");
+
+    // Normal Object
+    // let computer = {
+    //     computerName: "Msi Titan",
+    //     trade:"msi",
+    //     year: "2024"
+    // }
+
+    let computer: {
+        computerName: string,
+        trade: string,
+        year: number,
+        newVersion: boolean
+    } = {
+        computerName: "Msi Titan",
+        trade:"msi",
+        year: 2024,
+        newVersion: true
+    }
+    console.log(computer.computerName);
+    console.log(computer.trade);
+    console.log(computer.year);
+    console.log(computer.newVersion);
+} 
+//tsObject();
 
 // #### FUNCTIONS #################################################
 // TypeScript Fonksiyonlar
 // void: dönüşü olmayan (Yani işlem sonunda bana birşey döndürme)
-function tsFunction(x,y,z){
-    console.log(`Normal: ${x} ${y} ${z}`); 
-}
-tsFunction(4,10,99);
+// function tsFunction(x,y,z){
+//     console.log(`Normal: ${x} ${y} ${z}`); 
+// }
+// tsFunction(4,10,99);
 
 function tsFunction2(x:number,y:number,z:string){
     console.log(`TS Function2: ${x} ${y} ${z}`); 
 }
-tsFunction2(4,10,"Merhabalar")
+// tsFunction2(4,10,"Merhabalar")
 
 
 function tsFunction3(x:any,y:number,z:string){
     console.log(`TS Function3: ${x} ${y} ${z}`); 
 }
-tsFunction3(44,10,"Merhabalar");
-tsFunction3(true,10,"Merhabalar");
-tsFunction3("Malatya",10,"Merhabalar");
+// tsFunction3(44,10,"Merhabalar");
+// tsFunction3(true,10,"Merhabalar");
+// tsFunction3("Malatya",10,"Merhabalar");
 
 // void: geriye bir şey döndürme
 function tsFunction4(x:any,y:number,z:string):void{
     console.log(`TS Function4: ${x} ${y} ${z}`); 
 }
-tsFunction4("Malatya",10,"Merhabalar");
+// tsFunction4("Malatya",10,"Merhabalar");
 
 function tsFunction5(x:any,y:number,z:string):number{
     //console.log(`TS Function4: ${x} ${y} ${z}`); 
@@ -186,8 +223,8 @@ function tsFunction5(x:any,y:number,z:string):number{
     return parseInt(x)+y+parseFloat(z);
 }
 
-const result5=tsFunction5("44",10,"99.12");
-console.log(result5);
+// const result5=tsFunction5("44",10,"99.12");
+// console.log(result5);
 
 // Bitirme Projesini PDF 
 // tsconfig.json
@@ -256,6 +293,12 @@ let tsClass = () => {
 } //end common Function
 tsClass()
 
+
+
+
+
+
+
 // #### OPTIONAL #################################################
 // TypeScript Sınıflar
 let tsOptionalClass = () => {
@@ -306,45 +349,107 @@ let tsOptionalClass = () => {
     let computerIntance2 = new Computer("Msi", 8, true,true);
     computerIntance2.everyComputerCopilot();
 }
-
-// #### ENUM #################################################
-// TypeScript Enum
-
-
-// #### CLASS #################################################
-// TypeScript Sınıflar
-// OOP 
-// this,super
-
-
-// #### GENERICS #################################################
-// TypeScript Generics
-
+//tsOptionalClass();
 
 // #### INHERITANCE #################################################
 // TypeScript Inheritance
 // this
 // super
+const tsInheritance = () => {
+    console.log("TypeScript Inheritance Class");
+    // 1.CLASS (COMMON CLASS)
+
+    class Computer {
+        //FIELD
+        _mainCard: string;
+        _cpu: string;
+        _ram: number;
+        _harddisk: string;
+        _newVersion: boolean
+
+        //CONSTRUCTOR
+        constructor(mainCard: string, cpu: string, ram: number, harddisk: string, newVersion: boolean){
+            this._mainCard = mainCard;
+            this._cpu = cpu;
+            this._ram = ram;
+            this._harddisk = harddisk;
+            this._newVersion = newVersion;
+        }
+
+        //FUNCTION
+        computerInformation(): void{
+            let result = `Information => MainCard: ${this._mainCard} Cpu: ${this._cpu} Ram: ${this._ram} Harddisk: ${this._harddisk} NewVersion: ${this._newVersion}`
+            console.log(result);
+        }
+    } //end class Computer
+
+    // 2.CLASS (MSI)
+
+    class Msi extends Computer {
+        // Field
+        _usb: string;
+
+        //Constructor
+        constructor(mainCard: string, cpu: string, ram: number, harddisk: string, newVersion: boolean, usb: string){
+
+            //super: üst atadan gelen bilgileri gösterir
+            super(mainCard, cpu, ram, harddisk, newVersion)
+
+            // this global state gösterir.
+            this._usb = usb;
+        }
+
+        //function
+        computerInformation(): void {
+            let result = `Information => MainCard: ${this._mainCard} Cpu: ${this._cpu} 
+            RAM: ${this._ram} Harddisk: ${this._cpu} NewVersion: ${this._newVersion} USB: ${this._usb}`
+            console.log(result);
+        }
+    }
+
+    // 3.CLASS (ASUS)
+
+    class Asus extends Computer{
+        //Field
+        _typeC: string;
+
+        //Constructor
+        constructor(mainCard: string, cpu: string, ram: number, harddisk: string, newVersion: boolean, typeC: string){
+
+            //super: üst atadan gelen bilgileri gösterir
+            super(mainCard, cpu, ram, harddisk, newVersion)
+
+            //this global state gösterir.
+            this._typeC = typeC;
+        }
+
+        // function
+        computerInformation(): void {
+            let result = `Information => MainCard: ${this._mainCard} Cpu: ${this._cpu} Ram: ${this._ram} Harddisk: ${this._harddisk} NewVersion: ${this._newVersion} USB: ${this._typeC}`;
+            console.log(result);
+        }
+    }
+}
 
 
 // #### ABSTRACT #################################################
 // TypeScript Abstract
+// super
 
+// #### GENERICS #################################################
+// TypeScript Generics
 
 // #### INTERFACE #################################################
 // TypeScript Interface
 
-// TypeScript Null ve Undefined
 // TypeScript Never
 // TypeScript Type Assertion
 // TypeScript Type Aliases
 // TypeScript Object Methods
-
 // TypeScript Decorators
 // TypeScript Mixins
 // TypeScript Interfaces vs Types
 // TypeScript Modules
-// TypeScript Namespaces
 // TypeScript Namespaces vs Modules
 // TypeScript Ambient Namespaces
 // TypeScript Ambient Modules
