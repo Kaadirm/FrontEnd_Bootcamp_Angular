@@ -1,8 +1,13 @@
 // https://www.typescriptlang.org/
 
-// npm run typescript 
+/*
+tsc -w
+npm run nodemon
+*/
+
+// npm run typescript
 // npm run nodemon
-// tsc 
+// tsc
 // tsc -w
 
 /*
@@ -618,16 +623,87 @@ let tsEncapsulationClass = () => {
 // #### ABSTRACT #################################################
 // TypeScript Abstract
 // super
+let abstractFunction = () => {
+    // abstract class( Genel Ortak Özellikler )
+    abstract class bilgisayarOrtakOzellikler {
+      // FIELD
+  
+      // CONSTRUCTOR
+      constructor() {}
+  
+      // FUNCTION
+      // Gövdeli Function
+      anakart(): void {
+        console.log("Anakart");
+      }
+  
+      // Gövdesiz Method
+      abstract cpu(): void;
+    } //end class abstract bilgisayarOrtakOzellikler
+  
+    // MSI
+    class msiTitan extends bilgisayarOrtakOzellikler {
+      //FIELD
+  
+      // CONSTRUCTOR
+      constructor() {
+        super(); // abstract class almak
+      }
+  
+      // Override
+      anakart(): void {
+        console.log("Anakart Msi");
+      }
+  
+      // NOT: abstract yazdığımız gövdesiz metodu extends ettiğimiz classta yazmak zorundayız.
+      cpu(): void {
+        console.log("MSI CPU");
+      }
+    } //end class msiTitan
+  
+    /////////////////////////
+    // abstract class instance yapamazsınız.
+    // let bilgisayarOrtakOzellik = new bilgisayarOrtakOzellikler();
+  
+    let msiVersion1 = new msiTitan();
+    msiVersion1.anakart();
+    msiVersion1.cpu();
+  };
+//   abstractFunction();
 
 // #### GENERICS #################################################
 // TypeScript Generics
+
+// #### ASSERTIONS (CAST #################################################
+// TypeScript Type Assertions
+// TypeScript Type Aliases
+function typeAssertionsFunction() {
+    console.log("type Assertions:  Tür değiştirme");
+    let data;
+  
+    // bu yazımda otomatik any
+    data = "Merhabalar";
+  
+    //any: string, number,boolean
+  
+    // 1. YOL
+    let value1 = data.length;
+    console.log(value1);
+  
+    // 2. YOL (Assertions)
+    let value2 = (<string>data).length;
+    console.log(value2);
+  
+    // 3. YOL (Assertions)
+    let value3 = (data as string).length;
+    console.log(value3);
+  }
+//   typeAssertionsFunction();
 
 // #### INTERFACE #################################################
 // TypeScript Interface
 
 // TypeScript Never
-// TypeScript Type Assertion
-// TypeScript Type Aliases
 // TypeScript Object Methods
 // TypeScript Decorators
 // TypeScript Mixins
